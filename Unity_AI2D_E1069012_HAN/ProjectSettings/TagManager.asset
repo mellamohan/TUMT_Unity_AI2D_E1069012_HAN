@@ -8,7 +8,7 @@ TagManager:
   - Metal
   - Target
   - ExplosiveBarrel
-  - ITEM
+  - ICON
   layers:
   - Default
   - TransparentFX

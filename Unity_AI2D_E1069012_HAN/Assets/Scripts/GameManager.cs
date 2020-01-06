@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
-        //SceneManager.LoadScene("AK場景");
+        //SceneManager.LoadScene("場景");
         StartCoroutine(Loading());
     }
      
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSeconds(1);
         //print("TEST 2");
 
-        AsyncOperation ao = SceneManager.LoadSceneAsync("AK場景");
+        AsyncOperation ao = SceneManager.LoadSceneAsync("場景");
         ao.allowSceneActivation = false;
 
         while (ao.isDone == false)

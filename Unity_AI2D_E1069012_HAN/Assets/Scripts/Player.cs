@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public Slider HPSlider;
 
     public Text textITEM;
-    public int ITEMCount;
-    public int ITEMTotal;
+    public int ICONCount;
+    public int ICONTotal;
 
     public Text textTime;
     public float gameTime;
@@ -23,14 +23,14 @@ public class Player : MonoBehaviour
             HPSlider.value = HP;
         }
 
-        if (other.tag == "BANANA")
+        if (other.tag == "ICON")
         {
-            ITEMCount++;
-            textITEM.text = "BANANA : " + ITEMCount + " / " + ITEMTotal;
+            ICONCount++;
+            textITEM.text = "ICON : " + ICONCount + " / " + ICONTotal;
             Destroy(other.gameObject);
         }
 
-        if (other.name == "終點" && ITEMCount == ITEMTotal)
+        if (other.name == "終點" && ICONCount == ICONTotal)
         {
             print("過關");
         }
@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        ITEMTotal = GameObject.FindGameObjectsWithTag("BANANA").Length;
-        textITEM.text = "BANANA : 0 / " + ITEMTotal;
+        ICONTotal = GameObject.FindGameObjectsWithTag("ICON").Length;
+        textITEM.text = "ICON : 0 / " + ICONTotal;
     }
 
     private void Update()

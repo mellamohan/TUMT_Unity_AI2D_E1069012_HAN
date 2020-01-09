@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         if (other.name == "終點" && ICONCount == ICONTotal)
         {
-            print("GAME OVER");
+            GameOver();
         }
     }
 
@@ -93,10 +93,9 @@ public class Player : MonoBehaviour
     {
         final.SetActive(true);
         textCurrent.text = "TIME : " + gameTime.ToString("F2");
-        textBest.text = "BEST" + PlayerPrefs.GetFloat("BT").ToString("F2");
+        textBest.text = "BEST" + PlayerPrefs.GetFloat("BEST").ToString("F2");
         Cursor.lockState = CursorLockMode.None;
 
-        GetComponent<FPSControllerLPFP.FpsControllerLPFP>().enabled = false;
         enabled = false;
     }
      
@@ -105,12 +104,12 @@ public class Player : MonoBehaviour
         final.SetActive(true);
         textCurrent.text = "TIME : " + gameTime.ToString("F2");
          
-        if (gameTime < PlayerPrefs.GetFloat("BT"))
+        if (gameTime < PlayerPrefs.GetFloat("BEST"))
         {
-            PlayerPrefs.SetFloat("BT", gameTime);
+            PlayerPrefs.SetFloat("BEST", gameTime);
         }
 
-        textBest.text = "BEST" + PlayerPrefs.GetFloat("BT").ToString("F2");
+        textBest.text = "BEST" + PlayerPrefs.GetFloat("BEST").ToString("F2");
 
         Cursor.lockState = CursorLockMode.None;
     }
